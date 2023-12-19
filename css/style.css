@@ -84,9 +84,15 @@ span {
 }
 .header-nav-link:hover {
   color: #404bbf;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 .header-nav-link:focus {
   color: #404bbf;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 .header-nav-link.active {
   color: #404bbf;
@@ -121,9 +127,15 @@ span {
 }
 .header-addres-link:hover {
   color: #404bbf;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 .header-addres-link:focus {
   color: #404bbf;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 /* main */
 .main {
