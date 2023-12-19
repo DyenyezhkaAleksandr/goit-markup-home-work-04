@@ -73,6 +73,7 @@ span {
 }
 .header-nav-link {
   display: block;
+  position: relative;
   color: #2e2f42;
   font-size: 16px;
   font-weight: 500;
@@ -86,6 +87,21 @@ span {
 }
 .header-nav-link:focus {
   color: #404bbf;
+}
+.header-nav-link.active {
+  color: #404bbf;
+}
+.header-nav-link.active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #404bbf;
+  bottom: -1px;
+}
+.header-nav-link::after {
 }
 .header-addres {
   color: #434455;
@@ -101,6 +117,7 @@ span {
   gap: 40px;
 }
 .header-addres-item {
+  transition: color 900ms easy-in-out;
 }
 .header-addres-link:hover {
   color: #404bbf;
@@ -108,8 +125,20 @@ span {
 .header-addres-link:focus {
   color: #404bbf;
 }
+/* main */
+.main {
+}
+/* section1 */
+/* header-box */
 .header-box {
   background-color: #2e2f42;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,6 +179,7 @@ span {
 .header-box-button:focus {
   background-color: #404bbf;
 }
+/* section2 */
 /* Advantages */
 .advantages {
   padding: 120px 0;
@@ -176,7 +206,23 @@ span {
   gap: 24px;
 }
 .advantages-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   width: calc((100% - 72px) / 4);
+}
+.advantages-item-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 264px;
+  height: 112px;
+  flex-direction: column;
+  border-radius: 4px;
+  border: 1px solid var(--LIGHT-SLATE, #8e8f99);
+  background: var(--CLOUD, #f4f4fd);
+}
+.advantages-icon {
 }
 .advantages-name {
   color: #2e2f42;
@@ -184,7 +230,6 @@ span {
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  margin-bottom: 8px;
 }
 .advantages-text {
   color: #434455;
@@ -246,6 +291,32 @@ span {
   letter-spacing: 0.02em;
   text-align: center;
 }
+.team-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  gap: 24px;
+}
+.team-social-item :hover {
+  background-color: #404bbf;
+  border-radius: 50%;
+}
+.team-social-item {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+}
+.team-social-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team-social-icon {
+}
 /* Portfolio */
 .portfolio {
   padding-top: 120px;
@@ -276,11 +347,36 @@ span {
   align-items: flex-start;
   justify-content: center;
   gap: 24px;
-  background: var(--WHITE, #fff);
+  background: #fff;
+}
+.portfolio-list-item :hover .overlay {
+  transform: translateY(0);
+}
+.portfolio-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 .portfolio-list-img {
   width: 360px;
   height: 300px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #f4f4fd;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding: 40px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 500ms ease-in;
 }
 .portfolio-speciality {
   padding: 32px 16px;
@@ -307,6 +403,13 @@ span {
   display: flex;
   padding: 100px 0;
 }
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+}
+.footer-main {
+}
 .footer-logo {
   color: #4d5ae5;
   font-family: Raleway, sans-serif;
@@ -324,4 +427,37 @@ span {
 .footer-content {
   color: #f4f4fd;
   max-width: 264px;
+  font-weight: 400;
+}
+.footer-social-media {
+}
+.footer-social-main {
+  color: #fff;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  gap: 24px;
+}
+.footer-social-item {
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background-color 500ms;
+}
+.footer-social-item :hover {
+  background-color: #31d0aa;
+  border-radius: 50%;
+}
+.footer-social-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-social-icon {
 }
